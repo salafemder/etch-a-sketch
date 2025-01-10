@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Etch-a-Sketch</title>
+    <link rel="stylesheet" href="stylesheet.css">
+</head>
+<body>
+<h1>Etch-a-Sketch</h1>
+<div id="container">
+
+</div>
+
+<script>
+//div container in body tag to hold grid --
+//grid creator function create divs using DOM create element method --
+//grid creator function adds class tags to created divs --
+//grid creator function loops div and class creation until equal to 16--
+//grid creator function sets container div to have a gridtemplate equal to 16 (uses fractional units)
+//add flexbox layout in stylesheet
+//container div has hard defined pixel width and length
+//add event listeners to add new class to divs that are hovered over 
+//new class changes color of affected div in stylesheet
+//create button that will send prompt
+//prompt will only take number equal to or less than 100 as valid
+//prompt button will call grid creator function
+//number will be parameter for grid creator function function
+//grid creator function function calls clear function to delete all child nodes
+//grid creator function loops div and class creation until equal to parameter number
+//grid creator function appends new divs to parent node
+//create erase button that calls clear function
+
+const gridContainer = document.querySelector("#container");
+
+function createGrid(size){
+
+    for(let i = 0; i < size * size; i++) { 
+        let tile = document.createElement('div');
+        tile.setAttribute('class', 'blank');
+        gridContainer.appendChild(tile);
+    };
+};
+
+ createGrid(16);
+
+</script>
+</body>
+</html>
