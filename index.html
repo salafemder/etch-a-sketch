@@ -31,18 +31,24 @@
 //grid creator function appends new divs to parent node
 //create erase button that calls clear function
 
+
+
 const gridContainer = document.querySelector("#container");
 
 function createGrid(size){
-
-    for(let i = 0; i < size * size; i++) { 
-        let tile = document.createElement('div');
-        tile.setAttribute('class', 'blank');
-        gridContainer.appendChild(tile);
+    for(let i = 0; i < size; i++) { 
+        let row = document.createElement('div');
+        row.setAttribute('class', 'row');
+        gridContainer.appendChild(row);
+        for(let i = 0; i < size; i++) { 
+            let column = document.createElement('div');
+            column.setAttribute('class', 'column');
+            row.appendChild(column);
+        };
     };
 };
 
- createGrid(16);
+createGrid(16);
 
 </script>
 </body>
