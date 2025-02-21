@@ -17,9 +17,9 @@
 //grid creator function create divs using DOM create element method --
 //grid creator function adds class tags to created divs --
 //grid creator function loops div and class creation until equal to 16--
-//grid creator function sets container div to have a gridtemplate equal to 16 (uses fractional units)
-//add flexbox layout in stylesheet
-//container div has hard defined pixel width and length
+//grid creator function sets container div to have a gridtemplate equal to 16 (uses fractional units)--
+//add flexbox layout in stylesheet--
+//container div has hard defined pixel width and length--
 //add event listeners to add new class to divs that are hovered over 
 //new class changes color of affected div in stylesheet
 //create button that will send prompt
@@ -49,6 +49,12 @@ function createGrid(size){
 };
 
 createGrid(16);
+
+const tile = document.querySelector(".column");
+
+tile.addEventListener("mouseover",() => {
+    tile.classList.add("filled")
+});
 
 </script>
 </body>
