@@ -38,23 +38,22 @@ const gridContainer = document.querySelector("#container");
 function createGrid(size){
     for(let i = 0; i < size; i++) { 
         let row = document.createElement('div');
-        row.setAttribute('class', 'row');
+        row.setAttribute('class', 'tile');
         gridContainer.appendChild(row);
         for(let i = 0; i < size; i++) { 
             let column = document.createElement('div');
             column.setAttribute('class', 'column');
-            row.appendChild(column);
+            column.addEventListener("mouseover",() => {
+            column.classList.add("filled")
+            }); 
+            row.appendChild(column); 
         };
     };
-};
+}
 
 createGrid(16);
 
-const tile = document.querySelector(".column");
 
-tile.addEventListener("mouseover",() => {
-    tile.classList.add("filled")
-});
 
 </script>
 </body>
