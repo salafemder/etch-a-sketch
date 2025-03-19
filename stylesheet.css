@@ -4,6 +4,36 @@ body{
     justify-content: center;
     align-items: center;
     flex-direction: column; 
+    background-color: #001111;
+}
+
+.header{
+    margin: 0;
+    margin-top: 2%;
+    text-decoration: underline;
+    font-style: italic;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: lightcoral;
+}
+
+.butts{
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 2%;
+    padding: 0.5%;
+    border-radius: 20px;
+    background-color: lightcoral;
+    color: black;  
+    border: solid whitesmoke 1px;
+}
+
+#input{
+    text-align: center;
+    margin: 2%;
+    border-radius: 20px;
+    background-color: whitesmoke;
+    border: solid lightcoral 1px; 
+    text-align: center;
 }
 
 #container{
@@ -12,13 +42,14 @@ body{
     align-items: center;
     flex-direction: column;
     margin: 0 auto;
+    padding: 5%;
+    background-color:#770505;
     width: 1000px;
     height: 1000px;
 }
 
 div{
-    background-color: grey;
-    border: 1px solid black;
+    background-color: whitesmoke;
     width: 100%;
     height: 100%;
     display: flex;

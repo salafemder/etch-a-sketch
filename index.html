@@ -7,7 +7,9 @@
     <link rel="stylesheet" href="stylesheet.css">
 </head>
 <body>
-<h1>Etch-a-Sketch</h1>
+<h1 class="header">Etch-a-Sketch!</h1>
+<button class="butts">Generate My Domain!!</button>
+<input type="number" id="input" name="number">
 <div id="container">
 
 </div>
@@ -20,8 +22,8 @@
 //grid creator function sets container div to have a gridtemplate equal to 16 (uses fractional units)--
 //add flexbox layout in stylesheet--
 //container div has hard defined pixel width and length--
-//add event listeners to add new class to divs that are hovered over 
-//new class changes color of affected div in stylesheet
+//add event listeners to add new class to divs that are hovered over--
+//new class changes color of affected div in stylesheet--
 //create button that will send prompt
 //prompt will only take number equal to or less than 100 as valid
 //prompt button will call grid creator function
@@ -34,6 +36,8 @@
 
 
 const gridContainer = document.querySelector("#container");
+let input = document.getElementById("input");
+const butts = document.querySelector(".butts");
 
 function createGrid(size){
     for(let i = 0; i < size; i++) { 
@@ -51,7 +55,10 @@ function createGrid(size){
     };
 }
 
-createGrid(16);
+butts.addEventListener("click", () => {
+    let gridSize = Number(input.value)
+    createGrid(gridSize);
+})
 
 
 
