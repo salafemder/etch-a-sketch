@@ -10,9 +10,6 @@
 <h1 class="header">Etch-a-Sketch!</h1>
 <button class="butts">Generate My Domain!!</button>
 <input type="number" id="input" name="number">
-<div id="container">
-
-</div>
 
 <script>
 //div container in body tag to hold grid --
@@ -24,25 +21,33 @@
 //container div has hard defined pixel width and length--
 //add event listeners to add new class to divs that are hovered over--
 //new class changes color of affected div in stylesheet--
-//create button that will send prompt
-//prompt will only take number equal to or less than 100 as valid
-//prompt button will call grid creator function
-//number will be parameter for grid creator function function
-//grid creator function function calls clear function to delete all child nodes
-//grid creator function loops div and class creation until equal to parameter number
-//grid creator function appends new divs to parent node
-//create erase button that calls clear function
+//create button that will send prompt--
+//prompt will only take number equal to or less than 100 as valid--
+//prompt button will call grid creator function--
+//number will be parameter for grid creator function function--
+//grid creator function calls clear function to delete all child nodes--
+//grid creator function loops div and class creation until equal to parameter number--
+//grid creator function appends new divs to parent node--
+//create erase button that calls clear function--
 
+//eraser marker tool 
 
-
-const gridContainer = document.querySelector("#container");
-let input = document.getElementById("input");
+const body = document.querySelector("body");
+const input = document.querySelector("#input"); //targets the element, not the value
 const butts = document.querySelector(".butts");
 
+const gridContainer = document.createElement('div')
+    gridContainer.setAttribute('id', 'container')
+
 function createGrid(size){
+    if(size < 1 || size > 100 ){
+        return alert("Woah partner, we're gonna need yah to enter a value between 1 and 100 ye' hear?")
+    };
+    gridContainer.textContent = "";
+    body.appendChild(gridContainer);
     for(let i = 0; i < size; i++) { 
         let row = document.createElement('div');
-        row.setAttribute('class', 'tile');
+        row.setAttribute('class', 'row');
         gridContainer.appendChild(row);
         for(let i = 0; i < size; i++) { 
             let column = document.createElement('div');
@@ -53,14 +58,12 @@ function createGrid(size){
             row.appendChild(column); 
         };
     };
-}
+};
 
 butts.addEventListener("click", () => {
-    let gridSize = Number(input.value)
+    let gridSize = Number(input.value);
     createGrid(gridSize);
-})
-
-
+});
 
 </script>
 </body>
