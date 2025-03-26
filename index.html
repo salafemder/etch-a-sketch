@@ -8,6 +8,11 @@
 </head>
 <body>
 <h1 class="header">Etch-a-Sketch!</h1>
+<p class="greeting">
+    Greetings and salutations wary artist. Down below is a mighty fine area to etch and/or sketch upon,
+    and should you find yourself wanting to partake you simply need only to enter the size you wish for the 
+    area to be and slap that button above!!
+</p>
 <button class="butts">Generate My Domain!!</button>
 <input type="number" id="input" name="number">
 
@@ -31,13 +36,22 @@
 //create erase button that calls clear function--
 
 //eraser marker tool 
-
 const body = document.querySelector("body");
-const input = document.querySelector("#input"); //targets the element, not the value
 const butts = document.querySelector(".butts");
+const input = document.querySelector("#input"); //targets the element, not the value
 
 const gridContainer = document.createElement('div')
     gridContainer.setAttribute('id', 'container')
+
+
+function getrandomColor(){
+    let letters = '0123456789ABCDEF';
+    let color = '#';
+    for (let i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+}
 
 function createGrid(size){
     if(size < 1 || size > 100 ){
@@ -53,7 +67,8 @@ function createGrid(size){
             let column = document.createElement('div');
             column.setAttribute('class', 'column');
             column.addEventListener("mouseover",() => {
-            column.classList.add("filled")
+               //column.classList.add("filled")
+               column.style.backgroundColor = getrandomColor()
             }); 
             row.appendChild(column); 
         };
